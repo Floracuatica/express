@@ -1,0 +1,39 @@
+{{! Home Page }}
+{{! layout }}
+{{! Using main layout }}
+{{! Lista de 3 proyectos desde el backend }}
+{{! views/home.hbs }}
+{{! Render }}
+
+{{! especificar layout }}
+{{! handlebars-hbs usa por defecto "main" si está configurado con layoutsDir }}
+{{! En hbs de npm, el layout por defecto es "layout", pero aquí configuramos por defecto 'main' a través de nombre de archivo en render }}
+
+{{!-- Home --}}
+{{! En Express-hbs, si no usamos un layout explicitamente, main.hbs se toma como layout si lo especificamos en res.render --}}
+
+{{! Contenido --}}
+{{! Inicio }}
+{{! views/home.hbs }}
+{{! -- }}
+
+{{! Nota: layout por defecto 'main' configurado por app.set('view engine','hbs') y ubicando layouts en views/layouts. --}}
+
+{{! body }}
+<section>
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+</section>
+
+<section>
+  <h3>Proyectos recientes</h3>
+  <ul class="projects">
+    {{#each projects}}
+      <li class="project-card">
+        <h4>{{this.name}}</h4>
+        <p>{{this.short}}</p>
+        <a class="btn" href="/projects/{{this.id}}">Ver más</a>
+      </li>
+    {{/each}}
+  </ul>
+</section>

@@ -1,0 +1,23 @@
+<section>
+  <h2>Proyectos</h2>
+  {{#if projects.length}}
+    <div class="grid">
+      {{#each projects}}
+        <article class="project-card">
+          <header>
+            <h3>{{this.name}}</h3>
+            <small>{{#each this.tags}}<span class="tag">{{this}}</span>{{/each}}</small>
+          </header>
+          <p>{{this.description}}</p>
+          <p>
+            <a class="btn" href="/projects/{{this.id}}">Detalle</a>
+            <a class="btn outline" href="{{this.repo}}" target="_blank" rel="noopener">Repo</a>
+            <a class="btn outline" href="{{this.url}}" target="_blank" rel="noopener">Demo</a>
+          </p>
+        </article>
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No hay proyectos aún.</p>
+  {{/if}}
+</section>
