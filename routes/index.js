@@ -15,8 +15,8 @@ module.exports = (projects) => {
   router.get('/about', (req, res) => {
     res.render('about', {
       title: 'Sobre mí',
-      content: `Soy Rommy, amante de la palabra, el código y las hortensias.
-      Estudio para enseñar con ternura y precisión, y construyo un portafolio que une creatividad y tecnología.`
+      content: `Soy Rommy, estudiante de la palabra, el código y los pequeños detalles en el css.
+      Estudio para enseñar con correcta precisión, y construyo un portafolio que une creatividad y tecnología.`
     });
   });
 
